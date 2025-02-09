@@ -1,0 +1,116 @@
+{
+  "info": {
+    "_postman_id": "9a405b7b-231c-4bec-8328-a9f9173ebc8a",
+    "name": "Wallet API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "21665622"
+  },
+  "item": [
+    {
+      "name": "Deposit",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user_id\": \"03d03b01-720d-45cd-aa39-e60582dd7fbf\", \"amount\": \"100.00\"}"
+        },
+        "url": "http://localhost:8080/deposit"
+      },
+      "response": []
+    },
+    {
+      "name": "Withdraw",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user_id\": \"03d03b01-720d-45cd-aa39-e60582dd7fbf\", \"amount\": \"100.000000000000000000\"}"
+        },
+        "url": "http://localhost:8080/withdraw"
+      },
+      "response": []
+    },
+    {
+      "name": "Transfer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"sender_id\": \"03d03b01-720d-45cd-aa39-e60582dd7fbf\", \r\n    \"receiver_id\": \"74b098a5-97bd-4f92-81c9-2f306d5205a4\", \r\n    \"amount\": \"15.00\"\r\n}"
+        },
+        "url": "http://localhost:8080/transfer"
+      },
+      "response": []
+    },
+    {
+      "name": "Wallet Balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/wallet/balance?user_id=03d03b01-720d-45cd-aa39-e60582dd7fbf",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "wallet",
+            "balance"
+          ],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "03d03b01-720d-45cd-aa39-e60582dd7fbf"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Wallet History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/wallet/history?user_id=03d03b01-720d-45cd-aa39-e60582dd7fbf",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "wallet",
+            "history"
+          ],
+          "query": [
+            {
+              "key": "user_id",
+              "value": "03d03b01-720d-45cd-aa39-e60582dd7fbf"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
